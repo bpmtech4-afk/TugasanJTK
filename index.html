@@ -13,53 +13,61 @@
         }
 
         :root {
-            --primary-900: #1e3a8a;
-            --primary-700: #3b82f6;
-            --primary-500: #4f46e5;
-            --purple-500: #7c3aed;
-            --pink-400: #ec4899;
-            --bg-soft: #eef4ff;
-            --bg-strong: #dbeafe;
-            --text-900: #0f172a;
-            --text-700: #334155;
-            --text-500: #475569;
+            --gold-900: #d4af37;
+            --gold-700: #e8c547;
+            --gold-500: #ffd700;
+            --gold-300: #f4e4a6;
+            --black-900: #0a0e27;
+            --black-800: #1a1f3a;
+            --black-700: #2d3561;
+            --black-600: #3e4680;
+            --text-light: #e8eaf6;
+            --text-gray: #b0bec5;
             --white: #ffffff;
-            --line: #dbe3f0;
-            --green-soft: #dcfce7;
-            --green-text: #166534;
-            --orange-soft: #fff7ed;
-            --orange-text: #9a4d00;
-            --red-soft: #fee2e2;
-            --red-text: #b91c1c;
+            --line-dark: #3e4680;
+            --green-soft: #1b5e20;
+            --green-text: #81c784;
+            --orange-soft: #e65100;
+            --orange-text: #ffb74d;
+            --red-soft: #c62828;
+            --red-text: #ef5350;
         }
 
         body {
-            background: linear-gradient(135deg, #edf4ff 0%, #e9d8ff 52%, #fce7f3 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #16213e 100%);
             background-attachment: fixed;
             min-height: 100vh;
-            color: var(--text-900);
+            color: var(--text-light);
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            box-shadow: 0 18px 40px rgba(30, 58, 138, 0.08);
+            background: rgba(26, 31, 58, 0.7);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.1);
         }
 
         .header-gradient {
-            background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #7c3aed 100%);
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 50%, #d4af37 100%);
             color: white;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
         }
 
         .btn-gradient {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+            color: #0a0e27;
             transition: all 0.3s ease;
+            font-weight: 700;
         }
 
         .btn-gradient:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #ffd700 0%, #f4e4a6 100%);
+        }
+
+        .btn-gradient:active {
+            transform: translateY(0px);
         }
 
         .card-hover {
@@ -67,35 +75,58 @@
         }
 
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.5);
         }
 
         .badge-pulse {
-            animation: pulse 2s infinite;
+            animation: pulse 2.5s infinite;
         }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.78; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            }
         }
 
         tbody tr {
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         tbody tr:hover {
-            background-color: rgba(37, 99, 235, 0.04);
+            background-color: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold-900);
         }
 
         input:focus, select:focus, textarea:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12) !important;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25) !important;
+            border-color: var(--gold-900) !important;
+        }
+
+        input, select, textarea {
+            background-color: rgba(26, 31, 58, 0.5) !important;
+            color: var(--text-light) !important;
+            border-color: rgba(212, 175, 55, 0.3) !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-gray);
         }
 
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 1;
@@ -104,70 +135,134 @@
         }
 
         section {
-            animation: slideIn 0.45s ease-out;
+            animation: slideIn 0.5s ease-out;
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
+            font-weight: 700;
         }
 
         .status-pending {
-            background: linear-gradient(135deg, #f9a8d4 0%, #fb7185 100%);
+            background: linear-gradient(135deg, var(--orange-soft) 0%, var(--orange-text) 100%);
+            color: white;
         }
 
         .status-completed {
-            background: linear-gradient(135deg, #60a5fa 0%, #22c55e 100%);
+            background: linear-gradient(135deg, var(--green-soft) 0%, var(--green-text) 100%);
+            color: white;
         }
 
         html, body, p, span, div, label, input, textarea, select, button, th, td {
-            letter-spacing: 0.01em;
-        }
-
-        .text-slate-500 { color: var(--text-500) !important; }
-        .text-slate-600 { color: var(--text-700) !important; }
-        .text-slate-700 { color: var(--text-700) !important; }
-        .text-slate-800 { color: var(--text-900) !important; }
-        .text-slate-900 { color: var(--text-900) !important; }
-
-        .header-gradient * {
-            color: #fff !important;
+            letter-spacing: 0.015em;
         }
 
         thead th {
-            color: var(--text-700) !important;
+            color: var(--gold-900) !important;
             font-weight: 800;
+            border-bottom: 2px solid var(--gold-900);
         }
 
-        td, th, label, input, select, textarea, p, button, span {
-            color: var(--text-900);
+        td, th, label, p, span, button {
+            color: var(--text-light);
+        }
+
+        .header-gradient h1 {
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-gradient p {
+            color: rgba(255,255,255,0.95);
+        }
+
+        /* Gold accent untuk highlights */
+        .gold-text {
+            color: var(--gold-900);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(26, 31, 58, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-900);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-700);
+        }
+
+        /* Button styles */
+        button {
+            transition: all 0.3s ease;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Table enhancement */
+        table {
+            border-collapse: separate;
+            border-spacing: 0 8px;
+        }
+
+        tbody tr:first-child td {
+            border-radius: 8px 8px 0 0;
+        }
+
+        tbody tr:last-child td {
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Admin badge styling */
+        #admin-badge {
+            animation: glow 2s infinite;
+        }
+
+        /* Modal enhancement */
+        #login-modal {
+            backdrop-filter: blur(8px);
+        }
+
+        .glass.modal-content {
+            border: 2px solid var(--gold-900);
         }
     </style>
 </head>
-<body class="text-slate-800 p-4 md:p-8">
+<body class="text-slate-200 p-4 md:p-8">
 
     <div class="max-w-7xl mx-auto space-y-6">
 
-        <header class="header-gradient p-8 rounded-2xl shadow-2xl">
+        <header class="header-gradient p-8 rounded-3xl shadow-2xl">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div class="space-y-2">
-                    <h1 class="text-4xl font-bold">
+                    <h1 class="text-5xl font-bold">
                         📊 Dashboard Tugasan Juruteknik
                     </h1>
-                    <p class="text-blue-100 text-lg">Pengurusan Jadual Tugasan Teknikal dengan Analisis Real-Time</p>
+                    <p class="text-blue-100 text-lg font-semibold">Pengurusan Jadual Tugasan Teknikal dengan Analisis Real-Time</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <div id="current-date" class="text-sm font-semibold bg-white/20 px-6 py-3 rounded-xl text-white backdrop-blur"></div>
+                    <div id="current-date" class="text-sm font-bold bg-white/15 px-6 py-3 rounded-xl text-white backdrop-blur border border-white/20"></div>
 
                     <div class="flex items-center gap-3 border-l-2 pl-4 border-white/30">
                         <span id="admin-badge" class="text-xs px-4 py-2 rounded-full font-bold bg-white/20 text-white badge-pulse">
                             🔒 Pelawat
                         </span>
-                        <button id="admin-btn" onclick="openLoginModal()" class="text-sm px-5 py-2 rounded-lg font-bold bg-white text-blue-600 hover:bg-blue-50 transition shadow-lg">
+                        <button id="admin-btn" onclick="openLoginModal()" class="text-sm px-5 py-2 rounded-lg font-bold bg-white text-black hover:bg-gold-300 transition shadow-lg hover:shadow-gold-500/50">
                             🔑 Log Masuk
                         </button>
                     </div>
@@ -175,18 +270,18 @@
             </div>
         </header>
 
-        <section class="glass p-8 rounded-2xl shadow-xl card-hover">
+        <section class="glass p-8 rounded-3xl shadow-xl card-hover">
             <div class="flex items-center gap-3 mb-4">
                 <span class="text-3xl">📢</span>
                 <h2 class="text-2xl font-bold text-gradient">Papan Arahan & Nota Penyelia</h2>
             </div>
-            <p class="text-slate-600 text-sm mb-4">Kemaskini arahan harian untuk semua ahli pasukan teknikal</p>
+            <p class="text-slate-400 text-sm mb-4">Kemaskini arahan harian untuk semua ahli pasukan teknikal</p>
             <div class="flex gap-3">
                 <textarea id="general-instruction" rows="2"
-                    class="w-full p-4 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 text-sm bg-white"
+                    class="w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 text-sm bg-opacity-50"
                     placeholder="📝 Masukkan arahan umum hari ini... Contoh: Perhatian - Penyelenggaraan sistem pada 3:00 PM"></textarea>
                 <button id="save-instruction-btn" onclick="saveGeneralInstruction()"
-                    class="btn-gradient text-white font-bold px-6 py-3 rounded-xl text-sm transition hidden shadow-lg">
+                    class="btn-gradient px-6 py-3 rounded-xl text-sm transition hidden shadow-lg">
                     💾 Simpan
                 </button>
             </div>
@@ -194,24 +289,24 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            <section class="glass p-8 rounded-2xl shadow-xl lg:col-span-1 space-y-4 card-hover">
+            <section class="glass p-8 rounded-3xl shadow-xl lg:col-span-1 space-y-4 card-hover">
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-3">
                         <span class="text-3xl">➕</span>
                         <div>
                             <h2 class="text-2xl font-bold text-gradient">Agih Tugasan</h2>
-                            <p class="text-sm text-slate-500">Borang Pemutakhiran Tugasan Baharu</p>
+                            <p class="text-sm text-slate-400">Borang Pemutakhiran Tugasan Baharu</p>
                         </div>
                     </div>
-                    <span id="form-lock-notice" class="text-xs text-orange-600 font-bold bg-orange-100 px-3 py-1 rounded-full">Kunci Admin</span>
+                    <span id="form-lock-notice" class="text-xs font-bold bg-orange-900/30 border border-orange-700 px-3 py-1 rounded-full text-orange-400">Kunci Admin</span>
                 </div>
 
                 <form id="task-form" onsubmit="addTask(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
+                        <label class="block text-xs font-bold text-gold-900 uppercase mb-2 flex items-center gap-2">
                             👤 Pilih Juruteknik
                         </label>
-                        <select id="tech-name" required class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white hover:border-blue-300 transition text-slate-800">
+                        <select id="tech-name" required class="w-full p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                             <option value="" disabled selected>-- Pilih Juruteknik --</option>
                             <option value="JTK R1 - SHAMSUL">👨‍💼 JTK R1 - SHAMSUL</option>
                             <option value="JTK R2 - AZHAR">👨‍💼 JTK R2 - AZHAR</option>
@@ -222,38 +317,38 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
+                        <label class="block text-xs font-bold text-gold-900 uppercase mb-2 flex items-center gap-2">
                             🔧 Tugasan
                         </label>
                         <input type="text" id="tech-task" required placeholder="Cth: Penyelenggaraan Server / Pemeriksaan Kabel"
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
+                            class="w-full p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
+                        <label class="block text-xs font-bold text-gold-900 uppercase mb-2 flex items-center gap-2">
                             📍 Lokasi
                         </label>
                         <input type="text" id="tech-location" required placeholder="Cth: Bilik Server 2, Blok A"
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
+                            class="w-full p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
+                        <label class="block text-xs font-bold text-gold-900 uppercase mb-2 flex items-center gap-2">
                             🕐 Tarikh & Masa
                         </label>
                         <input type="datetime-local" id="tech-datetime" required
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
+                            class="w-full p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
+                        <label class="block text-xs font-bold text-gold-900 uppercase mb-2 flex items-center gap-2">
                             💬 Arahan Khusus
                         </label>
                         <textarea id="tech-instructions" rows="2" placeholder="Contoh: Periksa kabel bekalan, bersihkan haba..."
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800"></textarea>
+                            class="w-full p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none"></textarea>
                     </div>
 
-                    <button type="submit" id="submit-task-btn" class="w-full btn-gradient text-white font-bold py-3 rounded-xl text-sm transition shadow-lg">
+                    <button type="submit" id="submit-task-btn" class="w-full btn-gradient font-bold py-3 rounded-xl text-sm transition shadow-lg">
                         ✅ Tugaskan Juruteknik
                     </button>
                 </form>
@@ -261,15 +356,15 @@
 
             <div class="lg:col-span-2 space-y-6">
 
-                <section class="glass p-6 rounded-2xl shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <section class="glass p-6 rounded-3xl shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="flex items-center gap-2">
                         <span class="text-2xl">🔍</span>
-                        <span class="text-sm font-bold text-slate-800">Penapis Paparan:</span>
+                        <span class="text-sm font-bold text-gold-900">Penapis Paparan:</span>
                     </div>
 
                     <div class="flex flex-wrap items-center gap-3">
                         <div>
-                            <select id="filter-month" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white text-slate-800">
+                            <select id="filter-month" onchange="renderTasks(); updateChart();" class="p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                                 <option value="all">📅 Semua Bulan</option>
                                 <option value="1">Januari</option>
                                 <option value="2">Februari</option>
@@ -287,39 +382,39 @@
                         </div>
 
                         <div>
-                            <select id="filter-year" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white text-slate-800">
+                            <select id="filter-year" onchange="renderTasks(); updateChart();" class="p-3 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none">
                                 <option value="all">📊 Semua Tahun</option>
                             </select>
                         </div>
                     </div>
                 </section>
 
-                <section class="glass p-8 rounded-2xl shadow-xl card-hover">
+                <section class="glass p-8 rounded-3xl shadow-xl card-hover">
                     <div class="flex items-center gap-3 mb-6">
                         <span class="text-3xl">📊</span>
                         <h2 class="text-2xl font-bold text-gradient">Bilangan Tugasan Mengikut Juruteknik</h2>
                     </div>
-                    <div class="relative h-72 w-full bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4">
+                    <div class="relative h-72 w-full bg-gradient-to-br from-black-800 to-black-700 rounded-2xl p-4 border border-gold-900/20">
                         <canvas id="techChart"></canvas>
                     </div>
                 </section>
 
-                <section class="glass p-8 rounded-2xl shadow-xl card-hover">
+                <section class="glass p-8 rounded-3xl shadow-xl card-hover">
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex items-center gap-3">
                             <span class="text-3xl">📋</span>
                             <h2 class="text-2xl font-bold text-gradient">Senarai Tugasan</h2>
                         </div>
                         <div class="flex items-center gap-3">
-                            <span id="task-count" class="text-sm font-bold text-blue-600 bg-blue-100 px-4 py-2 rounded-full">0 Tugasan</span>
-                            <button id="clear-data-btn" onclick="resetAllData()" class="text-sm text-red-500 hover:text-red-700 font-bold hidden">🗑️ Padam Semua</button>
+                            <span id="task-count" class="text-sm font-bold text-black bg-gradient-to-r from-gold-900 to-gold-700 px-4 py-2 rounded-full">0 Tugasan</span>
+                            <button id="clear-data-btn" onclick="resetAllData()" class="text-sm text-red-text hover:text-red-400 font-bold hidden">🗑️ Padam Semua</button>
                         </div>
                     </div>
 
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
+                        <table class="w-full text-left">
                             <thead>
-                                <tr class="border-b-2 border-blue-200 text-xs font-bold text-slate-600 uppercase">
+                                <tr class="text-xs font-bold text-gold-900 uppercase">
                                     <th class="py-4 px-3">👤 Juruteknik</th>
                                     <th class="py-4 px-3">🔧 Tugasan & Arahan</th>
                                     <th class="py-4 px-3">📍 Lokasi</th>
@@ -328,7 +423,7 @@
                                     <th id="action-col-header" class="py-4 px-3 text-right">⚙️ Tindakan</th>
                                 </tr>
                             </thead>
-                            <tbody id="task-list-body" class="divide-y divide-slate-200 text-sm">
+                            <tbody id="task-list-body" class="text-sm">
                             </tbody>
                         </table>
                     </div>
@@ -338,23 +433,23 @@
         </div>
     </div>
 
-    <div id="login-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md flex items-center justify-center hidden z-50 p-4">
-        <div class="glass rounded-2xl shadow-2xl max-w-md w-full p-8 space-y-6 border-2 border-white/50">
+    <div id="login-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center hidden z-50 p-4">
+        <div class="glass modal-content rounded-3xl shadow-2xl max-w-md w-full p-8 space-y-6">
             <div class="flex justify-between items-center">
                 <h3 class="text-2xl font-bold text-gradient">🔐 Log Masuk Admin</h3>
-                <button onclick="closeLoginModal()" class="text-slate-400 hover:text-slate-600 font-bold text-2xl">✕</button>
+                <button onclick="closeLoginModal()" class="text-gold-900 hover:text-gold-700 font-bold text-2xl">✕</button>
             </div>
-            <p class="text-sm text-slate-600">Masukkan PIN keselamatan untuk mengaktifkan mod suntingan dan pengurusan tugasan.</p>
+            <p class="text-sm text-slate-400">Masukkan PIN keselamatan untuk mengaktifkan mod suntingan dan pengurusan tugasan.</p>
             <div>
-                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">🔑 PIN Admin</label>
+                <label class="block text-xs font-bold text-gold-900 uppercase mb-2">🔑 PIN Admin</label>
                 <input type="password" id="modal-pin-input" placeholder="••••••••"
-                    class="w-full p-4 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800"
+                    class="w-full p-4 border-2 rounded-xl text-sm focus:ring-2 focus:outline-none"
                     onkeypress="if(event.key === 'Enter') submitLogin()">
-                <p id="modal-error-msg" class="text-xs text-red-500 mt-2 font-bold hidden">❌ PIN salah. Sila cuba lagi.</p>
+                <p id="modal-error-msg" class="text-xs text-red-text mt-2 font-bold hidden">❌ PIN salah. Sila cuba lagi.</p>
             </div>
             <div class="flex justify-end gap-3 pt-4">
-                <button onclick="closeLoginModal()" class="px-5 py-2 text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition">Batal</button>
-                <button onclick="submitLogin()" class="px-5 py-2 text-sm font-bold text-white btn-gradient rounded-lg transition shadow-lg">Log Masuk</button>
+                <button onclick="closeLoginModal()" class="px-5 py-2 text-sm font-bold text-slate-300 bg-black-700 hover:bg-black-600 rounded-lg transition">Batal</button>
+                <button onclick="submitLogin()" class="px-5 py-2 text-sm font-bold btn-gradient rounded-lg transition shadow-lg">Log Masuk</button>
             </div>
         </div>
     </div>
@@ -422,11 +517,11 @@
 
             if (isAdmin) {
                 adminBadge.innerText = '🔓 Admin';
-                adminBadge.className = 'text-xs px-4 py-2 rounded-full font-bold bg-green-100 text-green-700 badge-pulse';
+                adminBadge.className = 'text-xs px-4 py-2 rounded-full font-bold bg-gradient-to-r from-gold-900 to-gold-700 text-black badge-pulse';
 
                 adminBtn.innerText = '🚪 Log Keluar';
                 adminBtn.onclick = logoutAdmin;
-                adminBtn.className = 'text-sm px-5 py-2 rounded-lg font-bold bg-red-500 text-white hover:bg-red-600 transition shadow-lg';
+                adminBtn.className = 'text-sm px-5 py-2 rounded-lg font-bold bg-red-700 text-white hover:bg-red-600 transition shadow-lg';
 
                 saveInstructionBtn.classList.remove('hidden');
                 generalInstruction.removeAttribute('readonly');
@@ -441,11 +536,11 @@
                 formInputs.forEach(input => input.removeAttribute('disabled'));
             } else {
                 adminBadge.innerText = '🔒 Pelawat';
-                adminBadge.className = 'text-xs px-4 py-2 rounded-full font-bold bg-slate-200 text-slate-700 badge-pulse';
+                adminBadge.className = 'text-xs px-4 py-2 rounded-full font-bold bg-black-700 text-slate-300 badge-pulse border border-slate-600';
 
                 adminBtn.innerText = '🔑 Log Masuk';
                 adminBtn.onclick = openLoginModal;
-                adminBtn.className = 'text-sm px-5 py-2 rounded-lg font-bold bg-white text-blue-600 hover:bg-blue-50 transition shadow-lg';
+                adminBtn.className = 'text-sm px-5 py-2 rounded-lg font-bold bg-white text-black hover:bg-gold-300 transition shadow-lg';
 
                 saveInstructionBtn.classList.add('hidden');
                 generalInstruction.setAttribute('readonly', 'true');
@@ -594,7 +689,7 @@
             if (filteredTasks.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="${colSpanCount}" class="py-12 text-center text-slate-400 font-semibold">
+                        <td colspan="${colSpanCount}" class="py-12 text-center text-slate-500 font-semibold">
                             📭 Tiada tugasan ditemui.
                         </td>
                     </tr>`;
@@ -603,16 +698,16 @@
 
             filteredTasks.forEach(t => {
                 const row = document.createElement('tr');
-                row.className = t.completed ? 'opacity-50 bg-green-50' : 'hover:bg-blue-50';
+                row.className = t.completed ? 'opacity-60 bg-green-900/10' : '';
 
                 let actionTd = '';
                 if (isAdmin) {
                     actionTd = `
                         <td class="py-4 px-3 text-right space-x-2">
-                            <button onclick="toggleTaskStatus(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold ${t.completed ? 'bg-gray-300 text-gray-700' : 'bg-green-100 text-green-700'} hover:bg-green-200 transition">
+                            <button onclick="toggleTaskStatus(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold ${t.completed ? 'bg-gray-700 text-gray-300' : 'bg-green-900/40 text-green-text'} hover:bg-green-800/40 transition border border-green-800/50">
                                 ${t.completed ? '↩️ Batal' : '✅ Selesai'}
                             </button>
-                            <button onclick="deleteTask(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold bg-red-100 text-red-600 hover:bg-red-200 transition">
+                            <button onclick="deleteTask(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold bg-red-900/40 text-red-text hover:bg-red-800/40 transition border border-red-800/50">
                                 🗑️ Padam
                             </button>
                         </td>
@@ -620,15 +715,15 @@
                 }
 
                 row.innerHTML = `
-                    <td class="py-4 px-3 font-bold text-slate-900">${t.name}</td>
+                    <td class="py-4 px-3 font-bold text-gold-900">${t.name}</td>
                     <td class="py-4 px-3">
-                        <div class="font-semibold ${t.completed ? 'line-through text-slate-500' : 'text-slate-800'}">${t.task}</div>
-                        <div class="text-xs text-slate-500 mt-1">${t.instructions ? '💬 ' + t.instructions : '-'}</div>
+                        <div class="font-semibold ${t.completed ? 'line-through text-slate-500' : 'text-slate-100'}">${t.task}</div>
+                        <div class="text-xs text-slate-400 mt-1">${t.instructions ? '💬 ' + t.instructions : '-'}</div>
                     </td>
-                    <td class="py-4 px-3 text-slate-700 font-semibold">${t.location || '-'}</td>
-                    <td class="py-4 px-3 text-xs text-slate-600 font-medium">${formatDateTime(t.datetime)}</td>
+                    <td class="py-4 px-3 text-slate-300 font-semibold">${t.location || '-'}</td>
+                    <td class="py-4 px-3 text-xs text-slate-400 font-medium">${formatDateTime(t.datetime)}</td>
                     <td class="py-4 px-3">
-                        <span class="text-xs font-bold px-3 py-1.5 rounded-full text-white ${t.completed ? 'bg-gradient-to-r from-green-400 to-blue-500' : 'status-pending bg-gradient-to-r'}">
+                        <span class="text-xs font-bold px-3 py-1.5 rounded-full ${t.completed ? 'status-completed' : 'status-pending'}">
                             ${t.completed ? '✅ Selesai' : '⏳ Dalam Tindakan'}
                         </span>
                     </td>
@@ -660,34 +755,49 @@
                         label: 'Jumlah Tugasan',
                         data: taskCounts,
                         backgroundColor: [
-                            'rgba(37, 99, 235, 0.88)',
-                            'rgba(59, 130, 246, 0.88)',
-                            'rgba(168, 85, 247, 0.88)',
-                            'rgba(244, 114, 182, 0.88)',
-                            'rgba(34, 197, 94, 0.88)'
+                            '#d4af37',
+                            '#ffd700',
+                            '#f4e4a6',
+                            '#e8c547',
+                            '#daa520'
                         ],
                         borderColor: [
-                            'rgb(29, 78, 216)',
-                            'rgb(37, 99, 235)',
-                            'rgb(124, 58, 237)',
-                            'rgb(236, 72, 153)',
-                            'rgb(22, 163, 74)'
+                            '#ffd700',
+                            '#ffed4e',
+                            '#ffd700',
+                            '#ffed4e',
+                            '#ffd700'
                         ],
                         borderWidth: 2,
-                        borderRadius: 8
+                        borderRadius: 10
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
+                    plugins: { 
+                        legend: { display: false }
+                    },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            ticks: { stepSize: 1, font: { weight: 'bold' } }
+                            ticks: { 
+                                stepSize: 1, 
+                                font: { weight: 'bold' },
+                                color: '#d4af37'
+                            },
+                            grid: {
+                                color: 'rgba(212, 175, 55, 0.1)'
+                            }
                         },
                         x: {
-                            ticks: { font: { weight: 'bold' } }
+                            ticks: { 
+                                font: { weight: 'bold' },
+                                color: '#d4af37'
+                            },
+                            grid: {
+                                color: 'rgba(212, 175, 55, 0.1)'
+                            }
                         }
                     }
                 }
