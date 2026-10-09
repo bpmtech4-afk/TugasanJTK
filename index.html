@@ -112,6 +112,33 @@
         .status-completed {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
+
+        /* Penambahbaikan keterlihatan teks */
+        body,
+        .glass,
+        .header-gradient,
+        .text-slate-500,
+        .text-slate-600,
+        .text-slate-700,
+        .text-slate-800,
+        .text-slate-900,
+        input,
+        select,
+        textarea,
+        label,
+        th,
+        td,
+        p,
+        span,
+        button {
+            color: #1f2937 !important;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+        }
+
+        .header-gradient * {
+            color: #ffffff !important;
+            text-shadow: none;
+        }
     </style>
 </head>
 <body class="text-slate-800 p-4 md:p-8">
@@ -183,7 +210,7 @@
                         <label class="block text-xs font-bold text-slate-600 uppercase mb-2 flex items-center gap-2">
                             👤 Pilih Juruteknik
                         </label>
-                        <select id="tech-name" required class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white hover:border-blue-300 transition">
+                        <select id="tech-name" required class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white hover:border-blue-300 transition text-slate-800">
                             <option value="" disabled selected>-- Pilih Juruteknik --</option>
                             <option value="JTK R1 - SHAMSUL">👨‍💼 JTK R1 - SHAMSUL</option>
                             <option value="JTK R2 - AZHAR">👨‍💼 JTK R2 - AZHAR</option>
@@ -198,7 +225,7 @@
                             🔧 Tugasan
                         </label>
                         <input type="text" id="tech-task" required placeholder="Cth: Penyelenggaraan Server / Pemeriksaan Kabel" 
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition">
+                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
                     </div>
 
                     <div>
@@ -206,7 +233,7 @@
                             📍 Lokasi
                         </label>
                         <input type="text" id="tech-location" required placeholder="Cth: Bilik Server 2, Blok A" 
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition">
+                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
                     </div>
 
                     <div>
@@ -214,7 +241,7 @@
                             🕐 Tarikh & Masa
                         </label>
                         <input type="datetime-local" id="tech-datetime" required 
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition">
+                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800">
                     </div>
 
                     <div>
@@ -222,7 +249,7 @@
                             💬 Arahan Khusus
                         </label>
                         <textarea id="tech-instructions" rows="2" placeholder="Contoh: Periksa kabel bekalan, bersihkan haba..." 
-                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition"></textarea>
+                            class="w-full p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800"></textarea>
                     </div>
 
                     <button type="submit" id="submit-task-btn" class="w-full btn-gradient text-white font-bold py-3 rounded-xl text-sm transition shadow-lg">
@@ -243,7 +270,7 @@
 
                     <div class="flex flex-wrap items-center gap-3">
                         <div>
-                            <select id="filter-month" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition bg-white">
+                            <select id="filter-month" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white text-slate-800">
                                 <option value="all">📅 Semua Bulan</option>
                                 <option value="1">Januari</option>
                                 <option value="2">Februari</option>
@@ -261,7 +288,7 @@
                         </div>
 
                         <div>
-                            <select id="filter-year" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition bg-white">
+                            <select id="filter-year" onchange="renderTasks(); updateChart();" class="p-3 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white text-slate-800">
                                 <option value="all">📊 Semua Tahun</option>
                             </select>
                         </div>
@@ -327,7 +354,7 @@
             <div>
                 <label class="block text-xs font-bold text-slate-600 uppercase mb-2">🔑 PIN Admin</label>
                 <input type="password" id="modal-pin-input" placeholder="••••••••" 
-                    class="w-full p-4 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition"
+                    class="w-full p-4 border-2 border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-300 transition text-slate-800"
                     onkeypress="if(event.key === 'Enter') submitLogin()">
                 <p id="modal-error-msg" class="text-xs text-red-500 mt-2 font-bold hidden">❌ PIN salah. Sila cuba lagi.</p>
             </div>
@@ -593,7 +620,7 @@
                 if (isAdmin) {
                     actionTd = `
                         <td class="py-4 px-3 text-right space-x-2">
-                            <button onclick="toggleTaskStatus(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold ${t.completed ? 'bg-gray-300 text-gray-700' : 'bg-green-100 text-green-700'} hover:shadow-md transition">
+                            <button onclick="toggleTaskStatus(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold ${t.completed ? 'bg-gray-300 text-gray-700' : 'bg-green-100 text-green-700'} hover:bg-green-200 transition">
                                 ${t.completed ? '↩️ Batal' : '✅ Selesai'}
                             </button>
                             <button onclick="deleteTask(${t.id})" class="text-xs px-3 py-2 rounded-lg font-bold bg-red-100 text-red-600 hover:bg-red-200 transition">
